@@ -72,7 +72,7 @@ function MyBooking() {
 
     try {
       // Determine target path dynamically based on radio selection
-      let url = 'https://royneza-backend.onrender.com/api/bookings/search/';
+      let url = 'https://royenza-restaurant-reservation-system.onrender.com/api/bookings/search/';
       if (searchType === 'phone') {
         url += `phone/${encodeURIComponent(queryVal)}`;
       } else {
@@ -110,7 +110,7 @@ function MyBooking() {
     setError('');
     try {
       // Sends a PUT request directly to your newly configured route
-      const response = await fetch(`https://royneza-backend.onrender.com/api/bookings/${bookingId}/status`, {
+      const response = await fetch(`https://royenza-restaurant-reservation-system.onrender.com/api/bookings/${bookingId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

@@ -44,9 +44,10 @@ router.post('/admin/login', async (req, res) => {
 
       // Save the token straight into an HTTP-only browser cookie container
       res.cookie('adminToken', token, {
-        httpOnly: true, // Safeguards against cross-site script reading (Great for your marks!)
-        secure: false,  // Keep false for localhost. Flip to true during your live cloud deployment!
-        maxAge: 24 * 60 * 60 * 1000 // Lifespan set to exactly 24 hours
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+        maxAge: 24 * 60 * 60 * 1000
       });
 
       return res.status(200).json({ success: true, message: 'Welcome to Royenza Dashboard' });
@@ -60,8 +61,16 @@ router.post('/admin/login', async (req, res) => {
 
 // 2. ADMIN LOGOUT (Clears cookie cache)
 router.post('/admin/logout', (req, res) => {
-  res.clearCookie('adminToken');
-  res.json({ success: true, message: 'Logged out successfully' });
+  res.clearCookie('adminToken', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'none'
+  });
+
+  res.json({
+    success: true,
+    message: 'Logged out successfully'
+  });
 });
 
 // ==========================================

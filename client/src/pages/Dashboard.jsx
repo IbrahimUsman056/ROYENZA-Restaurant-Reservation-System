@@ -68,7 +68,7 @@ const Dashboard = () => {
   const loadBookings = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('https://royneza-backend.onrender.com/api/bookings/all', {
+      const response = await fetch('https://royenza-restaurant-reservation-system.onrender.com/api/bookings/all', {
         method: 'GET',
         credentials: 'include' 
       });
@@ -118,7 +118,7 @@ const Dashboard = () => {
   const confirmAction = async () => {
     let notificationMessage = '';
     let notificationType = '';
-    const targetUrl = `https://royneza-backend.onrender.com/api/bookings/${modalState.bookingId}`;
+    const targetUrl = `https://royenza-restaurant-reservation-system.onrender.com/api/bookings/${modalState.bookingId}`;
 
     try {
       if (modalState.type === 'confirm') {

@@ -54,17 +54,20 @@ const AdminLogin = () => {
       setError('');
 
       // Send the login details to your Node/Express backend API
-      const response = await fetch('https://royneza-backend.onrender.com/api/bookings/admin/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          password: formData.password
-        }),
-        credentials: 'include' // CRITICAL: This allows your browser to save the secure HTTP-Only cookie
-      });
+      const response = await fetch(
+        'https://royenza-restaurant-reservation-system.onrender.com/api/bookings/admin/login',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: formData.username,
+            password: formData.password
+          }),
+          credentials: 'include'
+        }
+      );
 
       const data = await response.json();
 

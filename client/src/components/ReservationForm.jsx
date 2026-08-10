@@ -277,7 +277,7 @@ const handlePaymentComplete = async (paymentData) => {
       console.log("Sending final payload to backend...", finalBookingPayload);
 
       // Making the API call to your Express backend
-      const response = await fetch('https://royneza-backend.onrender.com/api/bookings/create', {
+      const response = await fetch('https://royenza-restaurant-reservation-system.onrender.com/api/bookings/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
