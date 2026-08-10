@@ -1,0 +1,305 @@
+/* Global Styles for Royneza Restaurant */
+:root {
+  --primary: #F5BD02;
+  --main-bg: #000000;
+  --secondary-bg: #111111;
+  --card-bg: #1A1A1A;
+  --white: #FFFFFF;
+  --light-gray: #CCCCCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Golden Text Style */
+.golden-text {
+  color: var(--primary) !important;
+}
+
+/* Light Gray Text */
+.gray-text {
+  color: var(--light-gray) !important;
+}
+
+/* Golden Button Style */
+.btn-golden {
+  background-color: var(--primary);
+  color: var(--main-bg);
+  font-weight: bold;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-golden:hover {
+  background-color: #d4a800;
+  color: var(--main-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(245, 189, 2, 0.3);
+}
+
+/* Card Style */
+.dark-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Section Style */
+.section-dark {
+  background-color: var(--secondary-bg);
+  padding: 50px 0;
+}
+
+/* Form Control Style */
+.form-control-dark {
+  background-color: var(--card-bg);
+  border: 1px solid var(--primary);
+  color: var(--white);
+  padding: 12px;
+}
+
+.form-control-dark:focus {
+  background-color: var(--card-bg);
+  border-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 0 5px rgba(245, 189, 2, 0.5);
+}
+
+.form-control-dark::placeholder {
+  color: var(--light-gray);
+}
+
+/* Table Style */
+.table-dark {
+  background-color: var(--card-bg);
+  color: var(--white);
+}
+
+.table-dark th {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.table-dark td {
+  color: var(--light-gray);
+  border-color: #333;
+}
+
+/* Badge Styles */
+.badge-pending {
+  background-color: var(--primary);
+  color: var(--main-bg);
+}
+
+.badge-confirmed {
+  background-color: #28a745;
+  color: var(--white);
+}
+
+.badge-cancelled {
+  background-color: #dc3545;
+  color: var(--white);
+}
+
+/* Image hover effects */
+img {
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* Image loading placeholder */
+.image-placeholder {
+  background-color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F5BD02;
+  font-size: 40px;
+}
+
+/* Add these at the end of App.css */
+
+/* Mobile Responsive Styles */
+@media (max-width: 991px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px 0 !important;
+  }
+  
+  /* Hero Section */
+  h1 {
+    font-size: 32px !important;
+  }
+  
+  h2 {
+    font-size: 24px !important;
+  }
+  
+  /* Buttons */
+  .btn-lg {
+    padding: 12px 25px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Cards */
+  .dark-card {
+    padding: 15px !important;
+  }
+  
+  /* Forms */
+  .form-control-dark {
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Smaller phones */
+  h1 {
+    font-size: 28px !important;
+  }
+  
+  h2 {
+    font-size: 22px !important;
+  }
+  
+  h3 {
+    font-size: 18px !important;
+  }
+  
+  /* Reduce padding */
+  section, .section-dark {
+    padding: 40px 0 !important;
+  }
+  
+  /* Form sections */
+  .reservation-form {
+    padding: 20px !important;
+  }
+  
+  /* Table responsive */
+  .table-responsive {
+    font-size: 12px;
+  }
+  
+  /* Modal */
+  .modal-content {
+    padding: 25px !important;
+    margin: 15px !important;
+  }
+  
+  /* Cards grid */
+  .card-container {
+    padding: 15px !important;
+  }
+  
+  /* Dashboard */
+  .dashboard-content {
+    margin-left: 0 !important;
+    padding: 15px !important;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 100% !important;
+    position: relative !important;
+    min-height: auto !important;
+  }
+}
+
+@media (max-width: 575px) {
+  /* Extra small devices */
+  h1 {
+    font-size: 24px !important;
+  }
+  
+  /* Stack buttons */
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Full width inputs */
+  input, select, textarea {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+  
+  /* Smaller padding */
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+/* Touch-friendly styles */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  button, 
+  .btn,
+  a.nav-link,
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .hover-effect:hover {
+    transform: none !important;
+  }
+  
+  /* Add active states instead */
+  .btn:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for iOS input zoom */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .footer,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
